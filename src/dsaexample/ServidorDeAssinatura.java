@@ -3,16 +3,16 @@ package dsaexample;
 import java.security.*;
 
 public class ServidorDeAssinatura {
-    private String algoritmoDeGeraçãoDeChaves;
+    private String algoritmoDeGeracaoDeChaves;
     private String algoritmoDeAssinatura;
     private PrivateKey chavePrivada;
     private PublicKey chavePublica;
 
-    public ServidorDeAssinatura(String algoritmoDeGeraçãoDeChaves, String algoritmoDeAssinatura, int tamanhoDaChave) throws NoSuchAlgorithmException {
-        this.algoritmoDeGeraçãoDeChaves = algoritmoDeGeraçãoDeChaves;
+    public ServidorDeAssinatura(String algoritmoDeGeracaoDeChaves, String algoritmoDeAssinatura, int tamanhoDaChave) throws NoSuchAlgorithmException {
+        this.algoritmoDeGeracaoDeChaves = algoritmoDeGeracaoDeChaves;
         this.algoritmoDeAssinatura = algoritmoDeAssinatura;
 
-        KeyPairGenerator geradorDeChaves = KeyPairGenerator.getInstance(this.algoritmoDeGeraçãoDeChaves);
+        KeyPairGenerator geradorDeChaves = KeyPairGenerator.getInstance(this.algoritmoDeGeracaoDeChaves);
         //Initializing the key pair generator
         geradorDeChaves.initialize(tamanhoDaChave);
 
