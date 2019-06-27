@@ -6,7 +6,7 @@ public class ServidorDeAssinatura {
     private String algoritmoDeGeracaoDeChaves;
     private String algoritmoDeAssinatura;
     private PrivateKey chavePrivada;
-    private PublicKey chavePublica;
+    public PublicKey chavePublica;
 
     public ServidorDeAssinatura(String algoritmoDeGeracaoDeChaves, String algoritmoDeAssinatura, int tamanhoDaChave) throws NoSuchAlgorithmException {
         this.algoritmoDeGeracaoDeChaves = algoritmoDeGeracaoDeChaves;

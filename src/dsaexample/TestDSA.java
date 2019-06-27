@@ -13,12 +13,13 @@ public class TestDSA {
             System.out.println("Criando assinatura para " + original);
 
             byte[] assinatura = servidorDeAssinatura.criarAssinatura(original.getBytes());
-            System.out.println("Assinatura: " + new String(assinatura, StandardCharsets.US_ASCII));
+            System.out.println("Assinatura: \n" + new String(assinatura, StandardCharsets.US_ASCII));
             System.out.println();
 
-            System.out.println("Verificando assinatura "
+            System.out.println("Verificando assinatura: \n"
                     + new String(assinatura, StandardCharsets.US_ASCII)
-                    + " para: " + original);
+                    + "\n para: " + original);
+            System.out.println();
 
             boolean resultado = servidorDeAssinatura.verificarAssinatura(original.getBytes(), assinatura);
             System.out.println("A assinatura está " + (resultado ? "correta" : "errada"));
@@ -29,12 +30,13 @@ public class TestDSA {
             System.out.println();
 
             System.out.println("Tentando verificar os dados alterados com a assinatura do original");
-            System.out.println("Verificando assinatura "
+            System.out.println("Verificando assinatura:\n"
                     + new String(assinatura, StandardCharsets.US_ASCII)
-                    + " para: " + editado);
+                    + "\n para: " + editado);
+            System.out.println();
 
             boolean resultado2 = servidorDeAssinatura.verificarAssinatura(editado.getBytes(), assinatura);
-            System.out.println("A assinatura está " + (resultado2 ? "correta" : "errada"));
+            System.out.println("A assinatura está: " + (resultado2 ? "correta" : "errada"));
 
         } catch (Exception e) {
             e.printStackTrace();
